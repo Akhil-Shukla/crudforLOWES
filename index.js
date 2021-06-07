@@ -7,8 +7,13 @@ app.get('/', (req, res) => {
 });
 
 
+<<<<<<< Updated upstream
 app.get('/justanothergirl', (req, res) => {
   res.send('Hello another girl!')
+=======
+app.get('/thkiller', (req, res) => {
+  res.send('Hello killer!')
+>>>>>>> Stashed changes
 });
 
 app.listen(port, () => {
