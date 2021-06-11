@@ -4,7 +4,7 @@
   "description": "CRUD app.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"hello world\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/Akhil-Shukla/crudforLOWES#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jest": "^27.0.4",
+    "sqlite3": "^5.0.2",
+    "supertest": "^6.1.3"
   }
 }
