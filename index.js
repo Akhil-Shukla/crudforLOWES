@@ -86,6 +86,13 @@ async function main(){
       response.sendStatus(201)
       response.end(JSON.stringify(result))
   });
+
+  router.post('/updateUser',async (request,response) => {
+    const {customerName,newName} = request.body;
+      let result = await updateCustomer(customerName,newName)
+      response.sendStatus(201)
+      response.end(JSON.stringify(result))
+  });
   
   app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`)
@@ -96,6 +103,17 @@ async function main(){
 
 
 
+async function updateCustomer(customerName,newName){
+    
+  const UPDATE_CUSTOMER_QUERY = `UPDATE Customer SET fullname = ? WHERE id = ?`
+
+  let customerId = await insertOrLookupCustomer(customerName,options={isCreate:false})
+  // console.log(customerId)
+
+  let result = await SQL3.run(UPDATE_CUSTOMER_QUERY,newName,customerId)    
+  
+  return result
+}
 
 
 
